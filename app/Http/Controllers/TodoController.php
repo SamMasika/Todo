@@ -25,7 +25,7 @@ class TodoController extends Controller
         ]);
 
         Todo::create($data);
-        Alert::success('Congrats', 'You\'ve Successfully stored');
+        toast('You\'ve Successfully stored','success');
 
         return back();
     }
@@ -34,7 +34,7 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
-        Alert::success('Congrats', 'You\'ve Successfully deleted');
+        toast('You\'ve Successfully deleted','success');
         return back();
     }
 }
