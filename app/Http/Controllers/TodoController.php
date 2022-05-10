@@ -20,6 +20,8 @@ class TodoController extends Controller
     {
         $data=$request->validate([
             'content'=>'required'
+        ],[
+            'content.required'=>'"Task required"'
         ]);
 
         Todo::create($data);

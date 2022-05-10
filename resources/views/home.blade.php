@@ -20,6 +20,10 @@
                     @csrf
                     <div class="input-group">
                 <input type="text" name="content" class="form-control" placeholder="Add your new todo">
+               
+                @if ($errors->has('content'))
+                <span class="text-danger"><br>{{ $errors->first('content') }}</span>
+                @endif
                     <button type=submit class="btn btn-dark btn-sm px-4"><i class="fa fa-plus"></i></button>
                     </div>
                 </form>
