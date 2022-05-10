@@ -16,7 +16,7 @@
         <div class="card-shadow-sm">
             <div class="card-body">
                 <h3>Todo List</h3>
-                <form method="POST" action="{{route('store')}}">
+                <form method="POST" action="{{route('store')}}" autocomplete="off">
                     @csrf
                     <div class="input-group">
                 <input type="text" name="content" class="form-control" placeholder="Add your new todo">
