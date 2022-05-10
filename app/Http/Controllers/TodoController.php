@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Alert;
 
 class TodoController extends Controller
 {
@@ -22,6 +23,8 @@ class TodoController extends Controller
         ]);
 
         Todo::create($data);
+        Alert::success('Congrats', 'You\'ve Successfully stored');
+
         return back();
     }
 
@@ -29,6 +32,7 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
+        Alert::success('Congrats', 'You\'ve Successfully deleted');
         return back();
     }
 }
